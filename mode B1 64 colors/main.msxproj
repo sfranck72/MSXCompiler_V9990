@@ -1,0 +1,80 @@
+' Configuration : ROM Mapper (PROJMODE 0)
+#Imports 1, "page1.msxproj"
+#Imports 2, "page2.msxproj"
+#Imports 3, "page3.msxproj"
+#Imports 4, "page4.msxproj"
+
+#LenStrings=63
+Dim addrExchange As Int: addrExchange = $C000
+Dim addrPalette As Int:  addrPalette = $C010
+Dim i As Int
+Dim j As Int
+Dim vData As Byte
+Dim idram As Int
+Dim idval As Int
+
+Screen 0: Width 40: Cls 
+Print "     --- MSX V9990 IMAGE LOADER ---"
+Print "   --- Mode B1 64 colors 256 x 212 ---"
+Print ""
+' --- STEP 1 : DETECTION ---
+AsmLine "call V9_DETECT"
+If Peek(addrExchange) = 0 Then Print "-> V9990 not detected !": Goto Loop
+Print "- V9990 detected"
+
+' --- STEP 2 : SETUP VDP ---
+Print "- Reset"
+AsmLine "call V9_RESET"
+
+Print "- Mode B1 64 colors"
+AsmLine "call V9_SETMODE_64"
+
+Print "- Init Palette"
+AsmLine "call V9_INIT_PALETTE_64"
+
+
+' --- STEP 3 : LOAD IMAGE ---
+Print "- Image Part1"
+CallPage 1, TRANSFER_PAGE1
+
+Print "- Image Part2"
+CallPage 2, TRANSFER_PAGE2
+
+Print "- Image Part3"
+CallPage 3, TRANSFER_PAGE3
+
+Print "- Image Part4"
+CallPage 4, TRANSFER_PAGE4
+
+Print "- Display Image OK -> V9990 VDP"
+
+' --- STEP 4 : SCREEN ENABLE ---
+' if necessary but enable with V9_SETMODE_64
+' Print "- Screen Enable"
+' AsmLine "call V9_SCREEN_ENABLE"
+
+white:
+' White background
+Poke addrExchange, 62
+    AsmLine "CALL V9_SET_BACKDROP"
+
+space:
+If GetKey(KeySpace) = 0 Then Goto space Else Goto test
+
+test:
+' Test all the 64 colors of the palette
+For i = 0 To 63
+    Poke addrExchange, i
+    AsmLine "CALL V9_SET_BACKDROP"
+    For j = 0 To 3000 : Next j
+Next i
+Goto white
+
+
+'Infinite loop
+Loop: Goto Loop
+
+' Lib V9990
+IncludeFile "v9990_lib.asm"
+' 64 colors
+IncludeFile "colors.asm"

@@ -1,0 +1,31 @@
+TRANSFER_PAGE3:
+AsmLine "call V9_TRANSFER3"
+Return
+
+
+' ------------------------------------------------------------------------------
+' V9_TRANSFER_HL_BC (Version Rapide)
+' HL = Source, BC = Taille
+' ------------------------------------------------------------------------------
+AsmLine "V9_TRANSFER3:"
+AsmLine "    ld hl, data3        ; Récupère l'adresse source stockée en RAM"
+AsmLine "    ld bc, (size3)      ; Récupère la taille de part2.bin en octet"
+AsmLine "    ld a, b"
+AsmLine "    or c"
+AsmLine "    ret z"
+AsmLine "_v9_loop3:               ; Label unique pour éviter les conflits"
+AsmLine "    ld a, (hl)"
+AsmLine "    out ($60), a"
+AsmLine "    inc hl"
+AsmLine "    dec bc"
+AsmLine "    ld a, b"
+AsmLine "    or c"
+AsmLine "    jr nz, _v9_loop3"
+AsmLine "    ret"
+
+AsmLine "data3:"
+IncludeBinary "part3.bin"
+AsmLine "size3:"
+AsmLine "dw 13500"
+
+
