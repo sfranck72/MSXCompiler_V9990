@@ -13,11 +13,13 @@ But the use with MSXCompiler is :
 - use `main.rom` in MSX with V9990 or Emulator :
   - on openMSX, I use the `Boosted MSX2+ Japan` machine (include the V9990).
   - on WebMSX, set the ROM format to `KonamiSCC` and add `Video V9990` in the settings.
- <br>
+
+## RESULT
 
 16 colors V9990             |  64 colors V9990
 :-------------------------:|:-------------------------:  
- ![](https://github.com/sfranck72/MSXCompiler_V9990/blob/main/image_B1_16colors.png)  |  ![](https://github.com/sfranck72/MSXCompiler_V9990/blob/main/image_B1_64colors.png)
+[RUN in WebMSX](https://webmsx.org/?MACHINE=MSX2PJ&CARTRIDGE1_FORMAT=KonamiSCC&ROM=https://github.com/sfranck72/MSXCompiler_V9990/raw/refs/heads/main/mode%20B1%2016%20colors/main.rom&PRESETS=V9990) | [RUN in WebMSX](https://webmsx.org/?MACHINE=MSX2PJ&CARTRIDGE1_FORMAT=KonamiSCC&ROM=https://github.com/sfranck72/MSXCompiler_V9990/raw/refs/heads/main/mode%20B1%2064%20colors/main.rom&PRESETS=V9990)  
+![](https://github.com/sfranck72/MSXCompiler_V9990/blob/main/image_B1_16colors.png)  |  ![](https://github.com/sfranck72/MSXCompiler_V9990/blob/main/image_B1_64colors.png)
 
 
 
