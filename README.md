@@ -7,7 +7,7 @@
 In each Directory, the ROM is already available : `main.rom`
 <br>  
 But the use with MSXCompiler is :  
-- Chose the 16 or 64 colors directory,
+- Choose the 16 or 64 colors directory,
 - Open `main.msxproj` file in MSXCompiler,
 - Run the compilation to obtain the `main.rom`,
 - use `main.rom` in MSX with V9990 or Emulator :
