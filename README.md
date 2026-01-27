@@ -22,8 +22,9 @@ But the use with MSXCompiler is :
 ![](https://github.com/sfranck72/MSXCompiler_V9990/blob/main/image_B1_16colors.png)  |  ![](https://github.com/sfranck72/MSXCompiler_V9990/blob/main/image_B1_64colors.png)
 
 ## PREPARE IMAGES
-I create a python script  [MSXCompiler_16_or_64_colors_V2.py](https://github.com/sfranck72/MSXCompiler_V9990/raw/refs/heads/main/MSXCompiler_16_or_64_colors_V2.py)  
+I create a python script  [MSXCompiler_16_or_64_colors_V2.py](https://github.com/sfranck72/MSXCompiler_V9990/raw/refs/heads/main/MSXCompiler_16_or_64_colors_V2.py) for Web browser.    
 Run it with the cmd command :  streamlit run path_of_the_script_MSXCompiler_16_or_64_colors_V2.py  
+![](python_script.png)
 <br>
 Load an image and obtain :  
 - the RGB color list for the 16 or 64 colors
