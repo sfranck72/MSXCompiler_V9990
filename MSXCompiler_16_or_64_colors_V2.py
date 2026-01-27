@@ -1,5 +1,6 @@
-# streamlit run C:\Users\7212188K\PycharmProjects\Streamlit\MSXCompiler_16_or_64_colors_V2.py
+# streamlit run path_of_the_script_MSXCompiler_16_or_64_colors_V2.py
 # -> bmp 16 and 64 colors if indexed in ASEPRITE
+# author: Polak and Gemini
 
 import math
 import struct
@@ -223,4 +224,5 @@ if image_download is not None:
                     st.success('Backup complete! Files are in the script directory.')
 
                 except Exception as e:
+
                     st.error(f"Une erreur est survenue lors du traitement : {e}")
