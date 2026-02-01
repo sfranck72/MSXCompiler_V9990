@@ -5,8 +5,8 @@
 
 
 ; --- FIXED ADDRESSES ---
-RAM_EXCHANGE_DATA   EQU $C000   ; For simple variables
-RAM_PALETTE         EQU $C010   ; Fixed address for our color table
+RAM_EXCHANGE_DATA   EQU $8000   ; For simple variables
+RAM_PALETTE         EQU $8010   ; Fixed address for our color table
 
 ; --- PORTS ---
 PORT_VRAM           EQU $60      ; VRAM Data Port       
