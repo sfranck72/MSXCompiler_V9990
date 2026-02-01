@@ -1,15 +1,13 @@
-' Configuration : ROM Mapper (PROJMODE 0)
+' B1 mode 16 colors V9990
 #Imports 1, "page1.msxproj"
 #Imports 2, "page2.msxproj"
 
 #LenStrings=63
-Dim addrExchange As Int: addrExchange = $C000
-Dim addrPalette As Int:  addrPalette = $C010
+Dim RAM_DATA_EXCHANGE As Byte    ' reserved byte at $8000
+Dim addrExchange As Int: addrExchange = $8000
 Dim i As Int
 Dim j As Int
-Dim vData As Byte
-Dim idram As Int
-Dim idval As Int
+
 
 Screen 0: Width 40: Cls
 Print "     --- MSX V9990 IMAGE LOADER ---"

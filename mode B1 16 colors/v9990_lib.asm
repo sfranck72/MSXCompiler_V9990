@@ -5,22 +5,22 @@
 
 
 ; --- ADRESSES FIXES ---
-RAM_EXCHANGE_DATA   EQU $C000   ; Pour les variables simples
-RAM_PALETTE         EQU $C010   ; L'adresse fixe de notre tableau de couleurs
+RAM_EXCHANGE_DATA   equ $8000   ; Pour les variables simples
+RAM_PALETTE         equ $8010   ; L'adresse fixe de notre tableau de couleurs
 
 ; --- PORTS ---
-PORT_VRAM           EQU $60      ; Port Données VRAM       
-PORT_PALETTE        EQU $61      ; Port Données Palette 
-PORT_COMMAND        EQU $62      
-PORT_REG_DATA       EQU $63      ; Port Données Registre
-PORT_REG_SELECT     EQU $64      ; Port Sélection Registre
-PORT_STATUS         EQU $65
-PORT_INTER_FLAG     EQU $66     
-PORT_SYS_CTRL       EQU $67      ; Port Contrôle Système        
+PORT_VRAM           equ $60      ; Port Données VRAM       
+PORT_PALETTE        equ $61      ; Port Données Palette 
+PORT_COMMAND        equ $62      
+PORT_REG_DATA       equ $63      ; Port Données Registre
+PORT_REG_SELECT     equ $64      ; Port Sélection Registre
+PORT_STATUS         equ $65
+PORT_INTER_FLAG     equ $66     
+PORT_SYS_CTRL       equ $67      ; Port Contrôle Système        
 
 ; --- CONSTANTES CONFIGURATION ---
-MODE_ENABLE         EQU 128         
-MODE_B1_REG7        EQU 0           
+MODE_ENABLE         equ 128         
+MODE_B1_REG7        equ 0           
 
 ; ------------------------------------------------------------------------------
 ; V9_DETECT
